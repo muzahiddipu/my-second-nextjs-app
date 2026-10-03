@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { FavoritesProvider } from "./components/FavoritesProvider";
+import SiteFooter from "./components/SiteFooter";
 import SiteNav from "./components/SiteNav";
 import "./globals.css";
 
@@ -28,10 +29,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen bg-[#f6f7f3] font-sans text-[#17271e]">
+      <body className="flex min-h-screen flex-col bg-[#f6f7f3] font-sans text-[#17271e]">
         <FavoritesProvider>
           <SiteNav />
           {children}
+          <SiteFooter />
         </FavoritesProvider>
       </body>
     </html>

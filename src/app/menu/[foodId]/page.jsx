@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import FavoriteButton from "../../components/FavoriteButton";
 import { getFoodById } from "../../../lib/foods";
 
 const FoodDetailsPage = async ({ params }) => {
@@ -24,7 +25,7 @@ const FoodDetailsPage = async ({ params }) => {
   } = food;
 
   return (
-    <div className="min-h-screen bg-[#f5f7f4]">
+    <div className="flex-1 bg-[#f5f7f4]">
       <main className="mx-auto w-full max-w-6xl px-5 py-8 text-[#17231e] sm:px-8 sm:py-12">
         <nav className="flex flex-wrap items-center justify-between gap-3">
           <Link
@@ -55,7 +56,7 @@ const FoodDetailsPage = async ({ params }) => {
 
           <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-11">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-              <span className="min-w-0 break-words font-semibold text-[#28684e]">
+              <span className="min-w-0 wrap-break-word font-semibold text-[#28684e]">
                 {cuisine}
               </span>
               {rating != null && (
@@ -101,6 +102,13 @@ const FoodDetailsPage = async ({ params }) => {
                 </p>
               </div>
             )}
+            <div className="mt-7">
+              <FavoriteButton
+                foodId={food.id}
+                dishName={dishName}
+                className="rounded-sm bg-[#285d43] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#204a36]"
+              />
+            </div>
           </div>
         </section>
 

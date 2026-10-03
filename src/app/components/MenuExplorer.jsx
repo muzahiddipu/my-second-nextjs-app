@@ -50,7 +50,7 @@ export default function MenuExplorer({ foods, loadError = false }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#f6f7f3]">
+    <main className="flex-1 bg-[#f6f7f3]">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14">
         <div className="flex flex-wrap items-end justify-between gap-5 border-b border-[#dfe5de] pb-7">
           <div>

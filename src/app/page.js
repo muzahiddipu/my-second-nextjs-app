@@ -16,7 +16,7 @@ export default async function Home() {
   const featuredFood = foods[0];
 
   return (
-    <main className="min-h-screen bg-[#f6f7f3]">
+    <main className="flex-1 bg-[#f6f7f3]">
       <section className="border-b border-[#e1e6de] bg-[#edf1e9]">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:py-12">
           <div className="py-2">

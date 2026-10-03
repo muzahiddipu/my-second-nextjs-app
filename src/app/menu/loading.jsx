@@ -1,6 +1,6 @@
 export default function MenuLoading() {
   return (
-    <main className="min-h-screen bg-[#f6f7f3]">
+    <main className="flex-1 bg-[#f6f7f3]">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14">
         <div className="h-8 w-64 animate-pulse rounded-sm bg-[#dfe5de]" />
         <div className="mt-8 h-24 animate-pulse rounded-sm bg-white" />

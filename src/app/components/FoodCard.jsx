@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useFavorites } from "./FavoritesProvider";
+import FavoriteButton from "./FavoriteButton";
 
 const FoodCard = ({ food }) => {
   const {
@@ -15,9 +15,6 @@ const FoodCard = ({ food }) => {
     rating,
     main_ingredients: ingredients = [],
   } = food;
-  const { isFavorite, toggleFavorite } = useFavorites();
-  const isSaved = isFavorite(id);
-
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#e0e6df] bg-white transition-shadow hover:shadow-[0_16px_36px_-28px_rgba(23,39,30,0.5)]">
       <div className="relative aspect-4/3 bg-[#e7ebe5]">
@@ -28,15 +25,11 @@ const FoodCard = ({ food }) => {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
-        <button
-          type="button"
-          aria-label={`${isSaved ? "Remove" : "Save"} ${dishName} ${isSaved ? "from" : "to"} favorites`}
-          aria-pressed={isSaved}
-          onClick={() => toggleFavorite(id)}
+        <FavoriteButton
+          foodId={id}
+          dishName={dishName}
           className="absolute right-3 top-3 rounded-sm border border-white/80 bg-white/95 px-3 py-2 text-xs font-semibold text-[#24573f] shadow-sm transition-colors hover:bg-[#285d43] hover:text-white"
-        >
-          {isSaved ? "Saved" : "Save"}
-        </button>
+        />
       </div>
 
       <div className="flex flex-1 flex-col p-5">

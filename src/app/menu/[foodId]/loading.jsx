@@ -1,7 +1,7 @@
 export default function FoodDetailsLoading() {
   return (
     <main
-      className="min-h-screen bg-[#f6f7f3] px-5 py-8 sm:px-8 sm:py-12"
+      className="flex-1 bg-[#f6f7f3] px-5 py-8 sm:px-8 sm:py-12"
       aria-busy="true"
       aria-label="Loading dish details"
     >

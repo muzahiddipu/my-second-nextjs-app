@@ -1,7 +1,7 @@
 export default function DashboardLoading() {
   return (
     <main
-      className="min-h-screen bg-[#f6f7f3]"
+      className="flex-1 bg-[#f6f7f3]"
       aria-busy="true"
       aria-label="Loading saved dishes"
     >
